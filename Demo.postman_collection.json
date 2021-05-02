@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "1b321715-c327-43d4-bcbe-463f0727de64",
+		"name": "Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sample",
+			"item": [
+				{
+					"name": "UserRequest",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.log(\"I am inside prerequistes pre-request section \")"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body is correct\", function () {\r",
+									"    pm.response.to.have.body(\"response_body_string\");\r",
+									"});\r",
+									"console.log(\"I am inside prerequistes pre-request Test section \")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.google.com/?q=Learn Step by Step",
+							"protocol": "https",
+							"host": [
+								"www",
+								"google",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Learn Step by Step"
+								},
+								{
+									"key": "Name",
+									"value": "Naveen Automationtional",
+									"disabled": true
+								},
+								{
+									"key": "add",
+									"value": "Bangalore",
+									"disabled": true
+								},
+								{
+									"key": "Skill",
+									"value": "Func",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log(\"I am inside prerequistes pre-request section \")"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log(\"I am inside prerequistes pre-request Test section Folder \")"
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"I am inside prerequistes pre-request section \")"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"I am inside prerequistes pre-request Test section \")"
+				]
+			}
+		}
+	]
+}
